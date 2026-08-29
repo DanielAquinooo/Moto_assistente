@@ -1,1 +1,5 @@
-console.log("MOTO SCRIPT CARREGOU!");
+const botao = document.getElementById("botao");
+
+botao.addEventListener("click", function () {
+    alert("BOTÃO FUNCIONANDO!");
+});
