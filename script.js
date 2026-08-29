@@ -1,5 +1,1 @@
-const botao = document.getElementById("botao");
-
-botao.addEventListener("click", function () {
-    alert("TESTE NOVO");
-});
+alert("SCRIPT CARREGOU!");
