@@ -1,49 +1,19 @@
 const botao = document.getElementById("botao");
 
-const SpeechRecognition =
-    window.SpeechRecognition || window.webkitSpeechRecognition;
+botao.addEventListener("click", function () {
 
-if (!SpeechRecognition) {
+    if ("webkitSpeechRecognition" in window) {
 
-    botao.addEventListener("click", function () {
-        alert("Seu navegador não suporta reconhecimento de voz.");
-    });
+        alert("RECONHECIMENTO DE VOZ DISPONÍVEL!");
 
-} else {
+    } else if ("SpeechRecognition" in window) {
 
-    const reconhecimento = new SpeechRecognition();
+        alert("RECONHECIMENTO DE VOZ DISPONÍVEL!");
 
-    reconhecimento.lang = "pt-BR";
-    reconhecimento.continuous = false;
-    reconhecimento.interimResults = false;
+    } else {
 
-    botao.addEventListener("click", function () {
+        alert("RECONHECIMENTO DE VOZ NÃO DISPONÍVEL!");
 
-        reconhecimento.start();
+    }
 
-    });
-
-    reconhecimento.onstart = function () {
-
-        console.log("🎤 Microfone ativado!");
-
-    };
-
-    reconhecimento.onresult = function (event) {
-
-        const texto = event.results[0][0].transcript;
-
-        console.log("Você disse:", texto);
-
-        alert("Você disse: " + texto);
-
-    };
-
-    reconhecimento.onerror = function (event) {
-
-        console.log("Erro:", event.error);
-
-        alert("Erro no microfone: " + event.error);
-
-    };
-}
+});
