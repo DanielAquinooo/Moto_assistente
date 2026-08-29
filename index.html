@@ -17,22 +17,14 @@
         
         <h2>Olá!</h2>
 
-        <button onclick="ouvir()">
+        <button onclick="botao()">
             🎤 Falar
         </button>
 
-    <script src="script.js">
+    <script src="script.js"></script>
+    
   
-        document.getElementById("botao").addEventListener("click", function () {
-            
-            const falar = new SpeechSynthesisUtterance(
-                "Olá! Eu sou seu assistente."
-            );
-            
-            mensagem.lang = "pt-BR";
-            
-            window.speechSynthesis.cancel();
-            window.speechSynthesis.speak(mensagem);
+
             
         });
         
