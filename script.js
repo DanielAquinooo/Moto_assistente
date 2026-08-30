@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    let conversaAtiva = false;
 
     const botao = document.getElementById("botao");
 
