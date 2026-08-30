@@ -13,7 +13,7 @@ reconhecimento.lang = "pt-BR";
 reconhecimento.continuous = false;
 reconhecimento.interimResults = false;
 
-    botao.addEventListenner("click",  function (){
+    botao.addEventListener("click",  function (){
 
             console.log("Botão presionado!");
 
