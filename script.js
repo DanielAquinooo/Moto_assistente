@@ -23,7 +23,7 @@ try {
         recohecimento.start();
 } catch (erro){
         console.log("ERRO AO INICIAR.", erro);
-    alert("Erro ao iniciar o microfone:" + erro.mensagem);
+    alert("Erro ao iniciar o microfone:" + String(erro));
 }
 });
         
