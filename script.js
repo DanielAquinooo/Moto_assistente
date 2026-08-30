@@ -25,11 +25,8 @@ window.speechSynthesis.speak(mensagem);
 
 // Botão
 botao.addEventListener("click", function () {
-
-```
+    console.log("Botão presionado")
 reconhecimento.start();
-```
-
 });
 
 // Ouvir
