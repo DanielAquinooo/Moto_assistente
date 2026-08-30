@@ -141,3 +141,16 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 });
+
+if ("serviceWorker" in navigator){
+
+    window.addEventListener("load", function (){
+        navigator.serviceWorker.register("./service-worker.js")
+        .then(function(){
+            console.log("Baymax: Service Worker registrado!");
+        })
+        .catch(function(erro){
+            console.log("Erro no service Worker:", erro);
+        });
+    });
+}
