@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else{
 
             conversaAtiva = false;
-            botao.textContent = "Iniciar conversa";
+            botao.textContent = "Falar";
             reconhecimento.stop();
         }
         
