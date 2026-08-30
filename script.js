@@ -22,7 +22,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // Botão
     botao.addEventListener("click", function () {
 
-        reconhecimento.start();
+                if(conversaAtiva === false){
+            conversaAtiva = true;
+            botao.textContent = "Encerrar conversa";
+            reconhecimento.start();
+
+        } else{
+
+            conversaAtiva = false;
+            botao.textContent = "Iniciar conversa";
+            reconhecimento.stop();
+        }
+        
 
     });
 
