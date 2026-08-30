@@ -25,7 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 if(conversaAtiva === false){
             conversaAtiva = true;
             botao.textContent = "Encerrar conversa";
-            reconhecimento.start();
+
+             try{
+                reconhecimento.start ();
+            } catch (erro){
+                console.log("Erro ao iniciar:", erro);
+            }
 
         } else{
 
