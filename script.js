@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Botão
     botao.addEventListener("click", function () {
+        console.log("CLIQUE NO BOTÃO");
               if(!conversaAtiva){
             conversaAtiva = true;
             botao.textContent = "Encerrar conversa";
