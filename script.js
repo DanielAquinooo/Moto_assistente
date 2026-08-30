@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     reconhecimento.interimResults = false;
 
 
-    // 🎤 BOTÃO
+    // Botão
     botao.addEventListener("click", function () {
 
         reconhecimento.start();
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // 🎤 COMEÇOU A OUVIR
+    // Ouvir
     reconhecimento.onstart = function () {
 
         console.log("Baymax está ouvindo...");
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    // 🧠 RECONHECEU A VOZ
+    //Reconhecimento de Voz
     reconhecimento.onresult = function (event) {
 
         const texto =
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    // 🤖 RESPOSTAS
+    // Responde (Básico)
     function responder(texto) {
 
         if (texto.includes("oi") || texto.includes("olá")) {
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // 🔊 BAYMAX FALA
+    // Baymax responde
     function falar(texto) {
 
         const mensagem =
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // ❌ ERRO
+    // Erros
     reconhecimento.onerror = function (event) {
 
         console.log("Erro:", event.error);
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    // 🎤 TERMINOU
+    //Termina
     reconhecimento.onend = function () {
 
         console.log("Baymax parou de ouvir.");
@@ -141,6 +141,8 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 });
+
+//Para celular
 
 if ("serviceWorker" in navigator){
 
