@@ -1,3 +1,13 @@
-const botao = document.getElementById("botao");
+document.addEventListener("DOMContentLoaded", function () {
 
-console.log("BOTÃO ENCONTRADO:", botao);
+    const botao = document.getElementById("botao");
+
+    console.log("BOTÃO:", botao);
+
+    botao.addEventListener("click", function () {
+
+        alert("BOTÃO FUNCIONANDO!");
+
+    });
+
+});
