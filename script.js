@@ -1,4 +1,4 @@
-documet.addEventListener("DOMContentLoaded", function (){
+document.addEventListener("DOMContentLoaded", function (){
         const botao = document.getElementById("botao");
     const SpeechRecognition =
         window.SpeechRecognition ||
