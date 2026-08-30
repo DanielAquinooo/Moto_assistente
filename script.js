@@ -15,12 +15,21 @@ document.addEventListener("DOMContentLoaded", function (){
             reconhecimento.lang = "pt-BR";
             reconhecimento.continuous = false;
             reconhecimento.interimResults = false;
+        
 botao.addEventListener("click", function () {
     console.log("Iniciando microfone...");
-    reconhecimento.start();
+
+try {
+        recohecimento.start();
+} catch (erro){
+        console.log("ERRO AO INICIAR.", erro);
+    alert("Erro ao iniciar o microfone:" + erro.mensagem);
+}
 });
+        
     reconhecimento.onstart = function (){
         console.log("Baymax está ouvindo!");
+            alert("Estou ouvindo.");
     };
 reconhecimento.onresult = function (event) {
     const texto =
