@@ -120,6 +120,12 @@ document.addEventListener("DOMContentLoaded", function () {
         mensagem.pitch = 1;
 
         window.speechSynthesis.cancel();
+        
+             mensagem.onend = function (){
+                     if(conversaAtiva){
+                            setTimeout(function(){
+                      reconhecimento.start();
+                }, 300);
 
         window.speechSynthesis.speak(mensagem);
 
@@ -138,11 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
     reconhecimento.onend = function () {
 
         console.log("Baymax parou de ouvir.");
-
-        if(conversaAtiva){
-            setInterval(function(){
-                reconhecimento.start();
-        }, 500);
 
     };
 
