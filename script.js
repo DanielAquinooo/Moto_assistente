@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const reconhecimento = new SpeechRecognition();
 
     reconhecimento.lang = "pt-BR";
-    reconhecimento.continuous = false;
+    reconhecimento.continuous = true;
     reconhecimento.interimResults = false;
 
 
