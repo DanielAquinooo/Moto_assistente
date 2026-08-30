@@ -7,7 +7,7 @@ reconhecimento.lang = "pt-BR";
 reconhecimento.continuous = false;
 reconhecimento.interimResults = false;
 
-// 🔊 Função para o Moto falar
+// Falar
 function falar(texto) {
 
 ```
@@ -23,7 +23,7 @@ window.speechSynthesis.speak(mensagem);
 
 }
 
-// 🎤 Botão
+// Botão
 botao.addEventListener("click", function () {
 
 ```
@@ -32,7 +32,7 @@ reconhecimento.start();
 
 });
 
-// 🎤 Começou a ouvir
+// Ouvir
 reconhecimento.onstart = function () {
 
 ```
