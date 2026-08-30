@@ -17,46 +17,126 @@ document.addEventListener("DOMContentLoaded", function () {
     reconhecimento.continuous = false;
     reconhecimento.interimResults = false;
 
-    // BOTÃO
-    botao.addEventListener("click", function () {
 
-        console.log("🎤 Iniciando reconhecimento...");
+    // 🎤 BOTÃO
+    botao.addEventListener("click", function () {
 
         reconhecimento.start();
 
     });
 
-    // COMEÇOU A OUVIR
+
+    // 🎤 COMEÇOU A OUVIR
     reconhecimento.onstart = function () {
 
-        console.log("🎤 Baymax está ouvindo...");
+        console.log("Baymax está ouvindo...");
 
     };
 
-    // RECEBEU A VOZ
+
+    // 🧠 RECONHECEU A VOZ
     reconhecimento.onresult = function (event) {
 
-        const texto = event.results[0][0].transcript;
+        const texto =
+            event.results[0][0].transcript.toLowerCase();
 
-        console.log("🗣️ Você disse:", texto);
+        console.log("Você disse:", texto);
 
-        alert("Baymax ouviu: " + texto);
+        responder(texto);
 
     };
 
-    // ERRO
+
+    // 🤖 RESPOSTAS
+    function responder(texto) {
+
+        if (texto.includes("oi") || texto.includes("olá")) {
+
+            falar("Oi! Como posso ajudar?");
+
+        }
+
+        else if (texto.includes("seu nome")) {
+
+            falar("Meu nome é Baymax.");
+
+        }
+
+        else if (texto.includes("quem é você")) {
+
+            falar("Eu sou o Baymax, seu assistente virtual.");
+
+        }
+
+        else if (texto.includes("tudo bem")) {
+
+            falar("Tudo ótimo! Obrigado por perguntar.");
+
+        }
+
+        else if (texto.includes("obrigado") ||
+                 texto.includes("obrigada")) {
+
+            falar("Por nada!");
+
+        }
+
+        else if (texto.includes("bom dia")) {
+
+            falar("Bom dia! Espero que seu dia seja ótimo.");
+
+        }
+
+        else if (texto.includes("boa tarde")) {
+
+            falar("Boa tarde!");
+
+        }
+
+        else if (texto.includes("boa noite")) {
+
+            falar("Boa noite! Até amanhã.");
+
+        }
+
+        else {
+
+            falar("Desculpe, ainda não sei responder isso.");
+
+        }
+
+    }
+
+
+    // 🔊 BAYMAX FALA
+    function falar(texto) {
+
+        const mensagem =
+            new SpeechSynthesisUtterance(texto);
+
+        mensagem.lang = "pt-BR";
+        mensagem.rate = 1;
+        mensagem.pitch = 1;
+
+        window.speechSynthesis.cancel();
+
+        window.speechSynthesis.speak(mensagem);
+
+    }
+
+
+    // ❌ ERRO
     reconhecimento.onerror = function (event) {
 
-        console.log("❌ Erro:", event.error);
-
-        alert("Erro no reconhecimento: " + event.error);
+        console.log("Erro:", event.error);
 
     };
 
-    // TERMINOU DE OUVIR
+
+    // 🎤 TERMINOU
     reconhecimento.onend = function () {
 
-        console.log("🎤 Baymax parou de ouvir.");
+        console.log("Baymax parou de ouvir.");
 
     };
 
