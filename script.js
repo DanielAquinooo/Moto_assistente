@@ -31,4 +31,5 @@ reconhecimento.onresult = function (event) {
 
 reconhecimento.onend = function (){
     console.log("Baymax parou de ouvir.");
+};
 });
