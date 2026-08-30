@@ -22,24 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Botão
     botao.addEventListener("click", function () {
 
-                if(conversaAtiva === false){
-            conversaAtiva = true;
-            botao.textContent = "Encerrar conversa";
-
-             try{
-                reconhecimento.start ();
-            } catch (erro){
-                console.log("Erro ao iniciar:", erro);
-            }
-
-        } else{
-
-            conversaAtiva = false;
-            botao.textContent = "Falar";
-            reconhecimento.stop();
-        }
-        
-
+                conversaAtiva = true;
+                reconhecimento.start();
     });
 
 
@@ -154,6 +138,11 @@ document.addEventListener("DOMContentLoaded", function () {
     reconhecimento.onend = function () {
 
         console.log("Baymax parou de ouvir.");
+
+        if(conversaAtiva){
+            setInterval(function(){
+                reconhecimento.start();
+        }, 500);
 
     };
 
