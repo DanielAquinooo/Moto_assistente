@@ -15,15 +15,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const reconhecimento = new SpeechRecognition();
 
     reconhecimento.lang = "pt-BR";
-    reconhecimento.continuous = true;
+    reconhecimento.continuous = false;
     reconhecimento.interimResults = false;
 
 
     // Botão
     botao.addEventListener("click", function () {
-
-                conversaAtiva = true;
-                reconhecimento.start();
+              if(!conversaAtiva){
+            conversaAtiva = true;
+            botao.textContent = "Encerrar conversa";
+            reconhecimento.start();
+           
+        } else {
+            conversaAtiva = false
+            botao.textContent = "Falar";
+            reconhecimento.stop();
+        }
+                
     });
 
 
